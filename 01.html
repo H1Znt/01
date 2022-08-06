@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: salmon;
+            transition: all .25s;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        button {
+            color: black;
+            border: 1px solid black; /* обводка контура */
+            padding: 15px 20px;
+            border-radius: 20px;
+            background: transparent; /* Фон становится прозрачным */
+            cursor: pointer; /* при наведении курсор меняется */
+            outline: none; /* не появляться вокруг синяя обводка */
+        }
+
+        h1,h3 {
+            animation: down 1s; /* Анимация  */
+
+        }
+
+        @keyframes down { /* для вклчения анимации */
+            from {
+                transform: translateY(-50px); /* откуда начинает */
+            }
+             to {
+                transform: translateY(0); /* кужа приходит */
+             }
+        }
+    </style>
+
+</head>
+  <body>
+
+    <div>
+
+        <h3>Hello World</h3>
+        <h1>Now 11:45:45</h1>
+        <button>Change fon</button>
+
+    </div>
+    
+    <Script>
+        const name = prompt('Your Name')  /* 'World' */ /* переменная для Js; Динамическое имя */ 
+        document.querySelector ('h3'). textContent 
+        = 'Hello ' + name /* динамическое имя */
+        document.querySelector ('h1'). textContent 
+        = 'Now ' + new Date().toLocaleTimeString()
+
+        setInterval(function() {
+            document.querySelector ('h1'). textContent 
+        = 'Now ' + new Date().toLocaleTimeString() 
+        }, 1000) /* кажду секунду контент выполняется */
+
+        const colors = ['Ivory','crimson','cyan','DarkOrchid','FireBrick'] /* варианты цветов */
+        let index = 0 /* Следит за текущим цветом */
+
+        document.querySelector('button').onclick = function () {
+            document.body.style.background = colors[index] /* обращение к индексу */
+            index++ 
+            if (index >= colors.length) index = 0
+        }   
+    </Script>
+  </body>
+</html>
